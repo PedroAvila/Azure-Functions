@@ -13,7 +13,7 @@ namespace pluralsightfuncs
     { 
         [FunctionName("OnPaymentReceived")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
             [Queue("orders")] IAsyncCollector<Order> orderQueue,
             ILogger log)
         {
